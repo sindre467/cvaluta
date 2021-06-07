@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <style>
+      .x {
+  position: relative;
+  font-weight: 600;
+  font-size: 1.9em;
+}
+
+.x .text-wrapper {
+color:rgb(59, 59, 59);
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.x .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+    </style>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1 class="x">
+        <span class="text-wrapper">
+          <span class="letters">Converter</span>
+        </span>
+      </h1>
+
+   <a href="log.html"></a>
+    <p class="adjust"></p>
+    <h6>WELCOME. </h6>
+    <div class="container">
+        <h3>Balance: <small> </small> </h3>
+        <div id="balance"></div>
+    <div class="inc-exp-container">
+        <input placeholder=''
+
+    </div>
+    <h4> income </h4>
+    <p id="moneyplus" class="mplus">-$0.00 ✔</p>
+    </div>
+    <h3> Expence: </h3>
+    <p id="moneyminus" class="mminus">-$0.00</p>
+    <h3>History</h3>
+    <ul id="list" class="list">
+        <li id="txt" class="minus">  currency: <span>$0.00 <br> </span> <br/> <hr><button class="delete-btn">remove vol</button></li>
+    </ul>
+<h3>Add New Transaction <br/> <hr> legg til ny overføring </h3> </hr>
+<form id="form">
+    <div class="form-control">
+        <label for="text"></label>
+        <input type="text" id="text" placeholder="...">
+    </div>
+    <div class="from-control">
+        <for for="amount"> Amount <br> (negative - expense,positive - income)</for> </label>
+        <input type="number" id="amount" placeholder="Enter amount...">
+        <!-- <input type="datetime" id="date" -->
+
+    </div>
+</form>
+<button class="btn"> Add transaction</button>
+<br/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script>
+var textWrapper = document.querySelector('.x .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+ anime.timeline({
+    loop: true
+  })
+  .add({
+    targets: '.x .letter', translateY: ["1.2em", 0], translateZ: 0,
+    duration: 1850, delay: (el, i) => 470 * i
+  }).add({
+
+    targets: '.x',  opacity: 0.3, duration: 1007989,
+    easing: "easeOutExpo",  delay: 1050
+  });
+
+   </script>
+   <script src="data.js"></script>
+</body>
+</html>
